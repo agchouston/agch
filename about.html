@@ -209,9 +209,19 @@
     {src: 'https://agchouston.org/assets/img/agc/AndrewsMyersAd.gif', link: 'https://www.andrewsmyers.com/'}, 
     {src: 'https://agchouston.org/assets/img/agc/Diffco.gif', link: 'https://www.diffcollc.com/'}
   ];
+  let currentAd = 0;
 
-// Change ad every 16 seconds
-setInterval(rotateAd, 16000);
+  // Rotate to the next ad
+  function rotateAd() {
+    currentAd = (currentAd + 1) % ads.length;
+    const imgEl = document.getElementById('ad-image');
+    const linkEl = document.getElementById('ad-link');
+
+    imgEl.src = ads[currentAd].src;
+    linkEl.href = ads[currentAd].link;
+  }
+  // Rotate every 16 seconds
+  setInterval(rotateAd, 16000);
 </script>
       </div>
       <div class="w-lg-75 text-center mx-lg-auto">
