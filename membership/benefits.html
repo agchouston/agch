@@ -60,6 +60,27 @@
   var googletag = googletag || {};
   googletag.cmd = googletag.cmd || [];
   </script>
+  <!-- Rotating Leaderboard Ad -->
+<div style="width: 100%; text-align: center; margin: 20px 0;">
+  <a href="https://www.andrewsmyers.com/" target="_blank">
+    <img id="rotatingAd" src="https://agchouston.org/assets/img/agc/AndrewsMyersAd.gif" alt="Ad" style="width: 100%; max-width: 728px; height: auto;">
+  </a>
+</div>
+
+<script>
+  const adImages = [
+    "https://agchouston.org/assets/img/agc/AndrewsMyersAd.gif",
+    "https://agchouston.org/assets/img/agc/Diffco.gif"
+  ];
+
+  let currentAd = 0;
+  const adElement = document.getElementById("rotatingAd");
+
+  setInterval(() => {
+    currentAd = (currentAd + 1) % adImages.length;
+    adElement.src = adImages[currentAd];
+  }, 16000); // Change every 16 seconds
+</script>
 
   <script>
   googletag.cmd.push(function () {
