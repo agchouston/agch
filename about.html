@@ -210,13 +210,8 @@
     {src: 'https://agchouston.org/assets/img/agc/Diffco.gif', link: 'https://www.diffcollc.com/'}
   ];
 
-  let currentAd = 0;
-  const adElement = document.getElementById("rotatingAd");
-
-  setInterval(() => {
-    currentAd = (currentAd + 1) % adImages.length;
-    adElement.src = adImages[currentAd];
-  }, 16000); // Change every 16 seconds
+// Change ad every 16 seconds
+setInterval(rotateAd, 15000);
 </script>
       </div>
       <div class="w-lg-75 text-center mx-lg-auto">
