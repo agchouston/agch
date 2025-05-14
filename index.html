@@ -295,24 +295,39 @@
     </div>
  </div>
  </div>
-    <!-- Rotating Leaderboard Ad -->
-<div style="width: 100%; text-align: center; margin: 20px 0;">
-  <a href="https://www.andrewsmyers.com/" target="_blank">
-    <img id="rotatingAd" src="https://agchouston.org/assets/img/agc/AndrewsMyersAd.gif" alt="Ad" style="width: 100%; max-width: 728px; height: auto;">
+  <!-- Rotating GIF Ad with Separate Links -->
+<div style="width: 100%; text-align: center; margin: 40px 0;">
+  <a id="ad-link" href="https://www.andrewsmyers.com/" target="_blank">
+    <img
+      id="ad-image"
+      src="https://agchouston.org/assets/img/agc/AndrewsMyersAd.gif"
+      alt="Rotating Ad"
+      style="width: 100%; max-width: 728px; height: auto; display: block; margin: 0 auto;">
+  </a>
+</div>
 
 <script>
-  const adImages = [
-    "https://agchouston.org/assets/img/agc/AndrewsMyersAd.gif",
-    "https://agchouston.org/assets/img/agc/Diffco.gif"
+  const ads = [
+    {
+      src: "https://agchouston.org/assets/img/agc/AndrewsMyersAd.gif",
+      link: "https://www.andrewsmyers.com/"
+    },
+    {
+      src: "https://agchouston.org/assets/img/agc/Diffco.gif",
+      link: "https://www.diffcollc.com/"
+    }
   ];
 
   let currentAd = 0;
-  const adElement = document.getElementById("rotatingAd");
 
-  setInterval(() => {
-    currentAd = (currentAd + 1) % adImages.length;
-    adElement.src = adImages[currentAd];
-  }, 16000); // Change every 16 seconds
+  function rotateAd() {
+    currentAd = (currentAd + 1) % ads.length;
+    document.getElementById("ad-image").src = ads[currentAd].src;
+    document.getElementById("ad-link").href = ads[currentAd].link;
+  }
+
+  // Rotate every 16 seconds
+  setInterval(rotateAd, 16000);
 </script>
  </div>
   </div>
