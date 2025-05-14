@@ -195,41 +195,48 @@
 
   <!-- ========== MAIN CONTENT ========== -->
   <main id="content" role="main">
+    <!-- Rotating GIF Ad with Separate Links -->
+<div style="width: 100%; text-align: center; margin: 40px 0;">
+  <a id="ad-link" href="https://www.andrewsmyers.com/" target="_blank">
+    <img
+      id="ad-image"
+      src="https://agchouston.org/assets/img/agc/AndrewsMyersAd.gif"
+      alt="Rotating Ad"
+      style="width: 100%; max-width: 728px; height: auto; display: block; margin: 0 auto;">
+  </a>
+</div>
+
+<script>
+  const ads = [
+    {
+      src: "https://agchouston.org/assets/img/agc/AndrewsMyersAd.gif",
+      link: "https://www.andrewsmyers.com/"
+    },
+    {
+      src: "https://agchouston.org/assets/img/agc/Diffco.gif",
+      link: "https://www.diffcollc.com/"
+    }
+  ];
+
+  let currentAd = 0;
+
+  function rotateAd() {
+    currentAd = (currentAd + 1) % ads.length;
+    document.getElementById("ad-image").src = ads[currentAd].src;
+    document.getElementById("ad-link").href = ads[currentAd].link;
+  }
+
+  // Rotate every 16 seconds
+  setInterval(rotateAd, 16000);
+</script>
+
     <!-- Gallery -->
-    <div class="container-xl content-space-t-1">
-      <div class="row mb-10">
-        <div class="col-12 mx-auto">
-          <div id="div-gpt-ad-leaderboard_top" style="text-align: center;">
-            <script>
-            googletag.cmd.push(function() { googletag.display('div-gpt-ad-leaderboard_top'); });
-            </script>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-8">
           <div class="mx-lg-auto">
-             <!-- Rotating Leaderboard Ad -->
-<div style="width: 100%; text-align: center; margin: 20px 0;">
-  <a href="https://www.andrewsmyers.com/" target="_blank">
-    <img id="rotatingAd" src="https://agchouston.org/assets/img/agc/AndrewsMyersAd.gif" alt="Ad" style="width: 100%; max-width: 728px; height: auto;">
-  </a>
-</div>
-
-<script>
-  const adImages = [
-    "https://agchouston.org/assets/img/agc/AndrewsMyersAd.gif",
-    "https://agchouston.org/assets/img/agc/Diffco.gif"
-  ];
-
-  let currentAd = 0;
-  const adElement = document.getElementById("rotatingAd");
-
-  setInterval(() => {
-    currentAd = (currentAd + 1) % adImages.length;
-    adElement.src = adImages[currentAd];
-  }, 16000); // Change every 16 seconds
-</script>
             <!-- Heading -->
             <div class="mb-5">
               <h1 class="display-4">Our Courses</h1>
@@ -530,28 +537,6 @@
     </div>
     <!-- End Card Info -->
 
-    <div class="container-xl content-space-1">
-      <div class="row justify-content-lg-between align-items-lg-center">
-        <div class="col-lg-4 mb-3 mb-lg-0">
-          <div id="div-gpt-ad-rightrail_top" style="text-align: center;">
-            <script>
-           googletag.cmd.push(function() { googletag.display('div-gpt-ad-rightrail_top'); });
-           </script>
-          </div>
-        </div>
-        <div class="col-lg-4 mb-3 mb-lg-0">
-          <div id="div-gpt-ad-rightrail_mid1" style="text-align: center;">
-            <script>
-           googletag.cmd.push(function() { googletag.display('div-gpt-ad-rightrail_mid1'); });
-           </script>
-          </div>
-
-        </div>
-        <div class="col-lg-4 mb-lg-0">
-          <div id='div-gpt-ad-rightrail_bottom' style="text-align: center;">
-            <script>
-           googletag.cmd.push(function() { googletag.display('div-gpt-ad-rightrail_bottom'); });
-           </script>
           </div>
         </div>
       </div>
