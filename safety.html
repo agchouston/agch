@@ -200,7 +200,7 @@
       <div class="row mb-10">
         <div class="col-12 mx-auto">
         </div>
-   <!-- Rotating GIF Ad with Separate Links -->
+  <!-- Leaderboard Ad -->
 <div style="width: 100%; text-align: center; margin: 40px 0;">
   <a id="ad-link" href="https://www.andrewsmyers.com/" target="_blank">
     <img
@@ -210,30 +210,6 @@
       style="width: 100%; max-width: 728px; height: auto; display: block; margin: 0 auto;">
   </a>
 </div>
-
-<script>
-  const ads = [
-    {
-      src: "https://agchouston.org/assets/img/agc/AndrewsMyersAd.gif",
-      link: "https://www.andrewsmyers.com/"
-    },
-    {
-      src: "https://agchouston.org/assets/img/agc/Diffco.gif",
-      link: "https://www.diffcollc.com/"
-    }
-  ];
-
-  let currentAd = 0;
-
-  function rotateAd() {
-    currentAd = (currentAd + 1) % ads.length;
-    document.getElementById("ad-image").src = ads[currentAd].src;
-    document.getElementById("ad-link").href = ads[currentAd].link;
-  }
-
-  // Rotate every 16 seconds
-  setInterval(rotateAd, 16000);
-</script>
       </div>
       <div class="row">
         <div class="col-lg-8">
